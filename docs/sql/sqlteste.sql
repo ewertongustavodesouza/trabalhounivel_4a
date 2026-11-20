@@ -1,5 +1,4 @@
--- Dados de exemplo para testar o sistema (rode depois do sql.sql)
-USE nome_do_seu_banco;
+USE estoque;
 
 INSERT INTO produtos (tipo, nome, marca, quantidade, estoque_minimo, preco_unitario, modelo_compativel, categoria)
 VALUES ('PECA', 'Motor ventilador', 'Elgin', 6, 2, 280.00, 'Hiwall 18k', 'Motor ventilador');
@@ -9,6 +8,3 @@ VALUES ('MATERIAL', 'Tubo de cobre', 'Eluma', 40, 20, 38.50, 'metro');
 
 INSERT INTO produtos (tipo, nome, marca, quantidade, estoque_minimo, preco_unitario, btus, voltagem, tipo_aparelho, inverter)
 VALUES ('APARELHO', 'Split Hi Wall', 'Midea', 5, 2, 2300.00, 12000, 220, 'SPLIT', TRUE);
-
--- Para limpar a tabela e começar do zero:
--- DELETE FROM produtos;
