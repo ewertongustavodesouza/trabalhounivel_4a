@@ -1,0 +1,53 @@
+ABSTRAÇÃO - SISTEMA DE CONTROLE DE ESTOQUE (AR-CONDICIONADO)
+
+1. CLASSE ABSTRATA: Produto
+   Representa qualquer item do estoque. É abstrata porque não existe
+   "um produto genérico" na vida real, só aparelho, peça ou material.
+
+   Atributos:
+   - id
+   - nome
+   - marca
+   - quantidade
+   - estoqueMinimo
+   - precoUnitario
+
+   Métodos:
+   - adicionarEstoque(qtd)
+   - removerEstoque(qtd)
+   - isEstoqueBaixo()
+   - getDescricaoDetalhada()  (abstrato)
+
+2. CLASSE: Aparelho (herda de Produto)
+   Atributos:
+   - btus
+   - voltagem
+   - tipo (Split, Janela, Cassete, Piso-teto)
+   - inverter (sim/não)
+
+   Métodos:
+   - getDescricaoDetalhada()
+
+3. CLASSE: Peca (herda de Produto)
+   Atributos:
+   - modeloCompativel
+   - categoria (compressor, placa, capacitor, motor ventilador...)
+
+   Métodos:
+   - getDescricaoDetalhada()
+
+4. CLASSE: Material (herda de Produto)
+   Atributos:
+   - unidadeMedida (metro, kg, unidade...)
+
+   Métodos:
+   - getDescricaoDetalhada()
+
+5. ENUM: TipoAparelho
+   Valores: SPLIT, JANELA, CASSETE, PISO_TETO
+
+RELAÇÕES
+- Aparelho, Peca e Material HERDAM de Produto.
+- Cada filha implementa getDescricaoDetalhada() do seu jeito (polimorfismo).
+- A quantidade só é alterada pelos métodos adicionarEstoque e
+  removerEstoque (encapsulamento).
